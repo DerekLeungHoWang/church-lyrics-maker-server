@@ -46,21 +46,23 @@ const createPowerPoint = async (req, res) => {
         slide.addImage({
           data: d.img.image,
           w: "100%",
-          h: "100%",
+          h: `100%`,
           sizing: {
             w: "100%",
-            h: "20%",
+            h: `${d.pptProperties.height}%`,
             type: "crop",
+           
           },
         });
       slide.addText(d.title, {
         x: "0",
         y: "0",
         w: "100%",
-        h: "20%",
+        h: `${d.pptProperties.height}%`,
         align: "center",
         valign: "middle",
         color: "ffffff",
+        fontSize:d.pptProperties.fontSize
       });
       slide.background = { color: "#000000" };
 
@@ -70,10 +72,10 @@ const createPowerPoint = async (req, res) => {
           slide_2.addImage({
             data: d.img.image,
             w: "100%",
-            h: "100%",
+            h: `100%`,
             sizing: {
               w: "100%",
-              h: "20%",
+              h: `${d.pptProperties.height}%`,
               type: "crop",
             },
           });
@@ -81,10 +83,11 @@ const createPowerPoint = async (req, res) => {
           x: "0",
           y: "0",
           w: "100%",
-          h: "20%",
+          h: `${d.pptProperties.height}%`,
           align: "center",
           valign: "middle",
           color: "ffffff",
+          fontSize:d.pptProperties.fontSize
         });
         slide_2.background = { color: "#000000" };
       });
