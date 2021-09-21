@@ -10,8 +10,10 @@ app.use(cors({
     origin: '*'
 }));
 const dbURI = 'mongodb+srv://root:1234@cluster0.yvke5.mongodb.net/lyricsDB?retryWrites=true&w=majority'
+
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
+        console.log("testing");
         console.log("connected to db")
         app.listen(PORT, () => console.log(`server starting on port ${PORT}`))
     })
