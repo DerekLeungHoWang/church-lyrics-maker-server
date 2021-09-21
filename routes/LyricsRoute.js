@@ -16,4 +16,6 @@ router.get('/:id', lyricsController.findLyricsById);
 router.put('/:id', lyricsController.editLyricsById);
 router.delete('/:id', lyricsController.deleteLyricsById);
 
+router.post('/ppt/create', lyricsController.createPowerPoint);
+
 module.exports = router;

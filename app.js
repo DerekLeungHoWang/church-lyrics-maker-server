@@ -20,9 +20,9 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     })
 
 const PORT = process.env.PORT || 8080
-const things = require("./routes/LyricsRoute");
+const lyrics = require("./routes/LyricsRoute");
 app.use(express.json());
-app.use("/lyrics", things);
+app.use("/lyrics", lyrics);
 
 
 
