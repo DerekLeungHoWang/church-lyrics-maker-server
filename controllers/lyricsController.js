@@ -61,8 +61,9 @@ const createPowerPoint = async (req, res) => {
         h: `${d.pptProperties.height}%`,
         align: "center",
         valign: "middle",
-        color: "ffffff",
-        fontSize:d.pptProperties.fontSize
+        color: d.text.textColor,
+        fontSize:d.pptProperties.fontSize,
+        fontFace:'PMingLiU',
       });
       slide.background = { color: "#000000" };
 
@@ -86,7 +87,8 @@ const createPowerPoint = async (req, res) => {
           h: `${d.pptProperties.height}%`,
           align: "center",
           valign: "middle",
-          color: "ffffff",
+          color: d.text.textColor,
+          fontFace:'PMingLiU',
           fontSize:d.pptProperties.fontSize
         });
         slide_2.background = { color: "#000000" };
